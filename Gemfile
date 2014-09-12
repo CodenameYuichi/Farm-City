@@ -38,5 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
+<<<<<<< HEAD
 
 gem 'gmaps4rails'
+=======
+gem 'bootstrap-sass'
+>>>>>>> 9226029052f0155b4d7c547f523fe32599a035fc
