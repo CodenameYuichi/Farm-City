@@ -25,5 +25,13 @@
     <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
 </p>
 
+<p>
+  <% @images.each do |image| %>
+  <%= image_tag image.picture.to_s %>
+  <%= image.name %>
+  <% end %>
+
+</p>
+
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>

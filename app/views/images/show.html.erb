@@ -2,12 +2,12 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @image.picture %>
+  <%= image_tag @image.picture_url.to_s %>
 </p>
 
 <p>
   <strong>Place:</strong>
-  <%= @image.place %>
+  <%= @image.place.name %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @image.name %>
 </p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Edit', edit_place_image_path(@image.place.id, @image.id) %> |
+<%= link_to 'Back', place_images_path %>

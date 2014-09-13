@@ -41,3 +41,5 @@ gem 'devise'
 
 gem 'gmaps4rails'
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'pry'

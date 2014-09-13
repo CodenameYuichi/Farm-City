@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Picture</th>
-      <th>Place</th>
       <th>Name</th>
       <th colspan="3"></th>
     </tr>
@@ -13,12 +12,11 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= image.picture %></td>
-        <td><%= image.place %></td>
+        <td><%= image_tag image.picture %></td>
         <td><%= image.name %></td>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', place_image_path(image.place.id, image.id) %></td>
+        <td><%= link_to 'Edit', edit_place_image_path(image.place.id, image.id) %></td>
+        <td><%= link_to 'Destroy', place_image_path(image.place.id, image.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Image', new_image_path %>
+<%= link_to 'New Image', new_place_image_path %>
