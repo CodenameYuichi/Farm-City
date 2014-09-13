@@ -1,30 +1,20 @@
-<div class='container'>
-  <%= current_user.signature %>
-  <h1>Listing places</h1>
-  <ul class='list-unstyled'>
-    <% @places.each do |place| %>
-      <li>
-        <div class='row'>
-          <div class='col-md-2'><%= image_tag place.newest_picture %></div>
-          <div class='col-md-8'>
-            <h3 class='inline-block'><%= place.name %></h3>
-            gps: <%= place.width %>, <%= place.height %>
-            <p><%= place.description %></p>
-          </div>
-          <div class='col-md-2'>
-            <%= link_to t(:show), place %>
-            <%= link_to t(:edit), edit_place_path(place) %>
-            <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+<h1>Miejsca blisko Ciebie</h1>
+<ul class='list-unstyled'>
+  <% @places.each do |place| %>
+    <li>
+      <div class='row'>
+        <div class='col-md-2'><%= image_tag place.newest_picture %></div>
+        <div class='col-md-8'>
+          <h3 class='inline-block'><%= place.name %></h3>
+          gps: <%= place.width %>, <%= place.height %>
+          <p><%= place.description %></p>
         </div>
-      </li>
-    <% end %>
-  </ul>
-
-  <div class='row'>
-    <div class='col-md-12'>
-    <%= link_to t('.new_place'), new_place_path %>
-    </div>
-
-  </div>
-</div>
+        <div class='col-md-2'>
+          <%= link_to t(:show), place %>
+          <%= link_to t(:edit), edit_place_path(place) %>
+          <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Na pewno?' } %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
