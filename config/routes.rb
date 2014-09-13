@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
   resources :dashbords, only: [:index]
   devise_for :users
   resources :users
   resources :places do
     resources :images
+    resources :comments
   end
   root 'home#index'
 end
