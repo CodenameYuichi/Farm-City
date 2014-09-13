@@ -4,8 +4,8 @@
     GPS: <%= @place.width %>, <%= @place.height %>
   </div>
   <div class='row'>
-    <%= link_to 'Edit', edit_place_path(@place) %> |
-    <%= link_to 'Back', places_path %>
+    <%= link_to t(:edit), edit_place_path(@place) %> |
+    <%= link_to t(:back), places_path %>
   </div>
   <div>
   <h2>Opis</h2>
@@ -27,7 +27,7 @@
     <% end %>
   </div>
   <div class='row'>
-    <%= link_to 'Add image', new_place_image_path(@place.id) %>
+    <%= link_to t('.add_image'), new_place_image_path(@place.id) %>
   </div>
   <div class='row'>
     <h2>Komentarze</h2>

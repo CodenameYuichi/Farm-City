@@ -1,12 +1,5 @@
 <div class='container'>
   <h1>Listing places</h1>
-
-<!--   <div class='row'>
-        <div class='col-xs-2 col-md-2'><strong>Name</strong></div>
-        <div class='col-xs-2 col-md-2'><strong>Width</strong></div>
-        <div class='col-xs-2 col-md-2'><strong>Height</strong></div>
-        <div class='col-xs-2 col-md-2'><strong>Description</strong></div>
-  </div> -->
   <ul class='list-unstyled'>
     <% @places.each do |place| %>
       <li>
@@ -18,9 +11,9 @@
             <p><%= place.description %></p>
           </div>
           <div class='col-md-2'>
-            <%= link_to 'Show', place %>
-            <%= link_to 'Edit', edit_place_path(place) %>
-            <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to t(:show), place %>
+            <%= link_to t(:edit), edit_place_path(place) %>
+            <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
       </li>
@@ -29,7 +22,8 @@
 
   <div class='row'>
     <div class='col-md-12'>
-    <%= link_to 'New Place', new_place_path %>
+    <%= link_to t('.new_place'), new_place_path %>
     </div>
+
   </div>
 </div>

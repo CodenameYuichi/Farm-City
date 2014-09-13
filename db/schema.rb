@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913101930) do
+ActiveRecord::Schema.define(version: 20140913102714) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -36,9 +36,8 @@ ActiveRecord::Schema.define(version: 20140913101930) do
 
   create_table "places", force: true do |t|
     t.string   "name"
-    t.decimal  "places",      precision: 8, scale: 2
-    t.decimal  "width",       precision: 8, scale: 2
-    t.decimal  "height",      precision: 8, scale: 2
+    t.integer  "width"
+    t.integer  "height"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -61,6 +60,9 @@ ActiveRecord::Schema.define(version: 20140913101930) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.float    "width"
+    t.float    "height"
+    t.float    "radius"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
