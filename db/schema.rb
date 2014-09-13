@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913030145) do
+ActiveRecord::Schema.define(version: 20140913101930) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20140913030145) do
 
   create_table "places", force: true do |t|
     t.string   "name"
-    t.integer  "width"
-    t.integer  "height"
+    t.decimal  "places",      precision: 8, scale: 2
+    t.decimal  "width",       precision: 8, scale: 2
+    t.decimal  "height",      precision: 8, scale: 2
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"

@@ -1,27 +1,35 @@
 <div class='container'>
   <h1>Listing places</h1>
 
-  <div class='row'>
+<!--   <div class='row'>
         <div class='col-xs-2 col-md-2'><strong>Name</strong></div>
         <div class='col-xs-2 col-md-2'><strong>Width</strong></div>
         <div class='col-xs-2 col-md-2'><strong>Height</strong></div>
         <div class='col-xs-2 col-md-2'><strong>Description</strong></div>
-  </div>
-  <% @places.each do |place| %>
-    <div class='row'>
-      <div class='col-xs-2 col-md-2'><%= place.name %></div>
-      <div class='col-xs-2 col-md-2'><%= place.width %></div>
-      <div class='col-xs-2 col-md-2'><%= place.height %></div>
-      <div class='col-xs-2 col-md-2'><%= place.description %></div>
-    </div>
-    <div class='row'>
-      <div class='col-xs-2'><%= link_to 'Show', place %></div>
-      <div class='col-xs-2'><%= link_to 'Edit', edit_place_path(place) %></div>
-      <div class='col-xs-2'><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    </div>
-  <% end %>
+  </div> -->
+  <ul class='list-unstyled'>
+    <% @places.each do |place| %>
+      <li>
+        <div class='row'>
+          <div class='col-md-2'><img src="http://placehold.it/100x100"></div>
+          <div class='col-md-8'>
+            <h3 class='inline-block'><%= place.name %></h3>
+            gps: <%= place.width %>, <%= place.height %>
+            <p><%= place.description %></p>
+          </div>
+          <div class='col-md-2'>
+            <%= link_to 'Show', place %>
+            <%= link_to 'Edit', edit_place_path(place) %>
+            <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 
   <div class='row'>
+    <div class='col-md-12'>
     <%= link_to 'New Place', new_place_path %>
+    </div>
   </div>
 </div>

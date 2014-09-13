@@ -2,8 +2,8 @@ class CreatePlaces < ActiveRecord::Migration
   def change
     create_table :places do |t|
       t.string :name
-      t.integer :width
-      t.integer :height
+      t.decimal :width, :precision => 8, :scale => 2
+      t.decimal :height, :precision => 8, :scale => 2
       t.text :description
       t.references :user, index: true
 
