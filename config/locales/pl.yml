@@ -1,0 +1,26 @@
+en:
+  hello: "Hello world"
+  back: Wróć
+  show: Pokaż
+  edit: Edytuj
+  delete: Usuń
+  hello: "Hello world"
+  places:
+    index:
+      new_place: Dodaj miejsce
+    show:
+      name: Nazwa
+      width: Szerokość
+      height: Dlugość
+      description: Opis
+      add_image: Dodaj obrazek
+  layouts:
+    home:
+      sign_in: Zaloguj
+      sign_up: Rejestracja
+    application:
+      dashboard: Tablica
+      places: Miejsca
+      edit_profile: Edytuj profil
+      edit_data: Edytuj dane
+      logout: Wyloguj
