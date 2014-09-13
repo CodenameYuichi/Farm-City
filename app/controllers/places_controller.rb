@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     # @images = Image.places.pluck(:pictures)
-    @images = Image.where(place_id: params[:id]).limit(5)
+    @images = Image.where(place_id: params[:id]).limit(4)
     @comment = Comment.new
     @comments = Comment.where(place_id: params[:id])
   end
