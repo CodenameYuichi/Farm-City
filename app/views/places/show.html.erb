@@ -21,9 +21,8 @@
 </p>
 
 <p>
-  <div style='width: 800px;'>
     <div id="map" style='width: 800px; height: 400px;'></div>
-  </div>
+    <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
 </p>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
