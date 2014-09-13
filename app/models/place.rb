@@ -3,5 +3,5 @@ class Place < ActiveRecord::Base
   has_many :images
   has_many :comments
 
-  validates: :name, :width, :height, presence: true
+  validates :name, :width, :height, presence: true
 end
