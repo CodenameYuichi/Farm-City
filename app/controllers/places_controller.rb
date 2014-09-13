@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   # GET /places
@@ -12,6 +13,8 @@ class PlacesController < ApplicationController
   def show
     # @images = Image.places.pluck(:pictures)
     @images = Image.where(place_id: params[:id]).limit(5)
+    @comment = Comment.new
+    @comments = Comment.where(place_id: params[:id])
   end
 
   # GET /places/new

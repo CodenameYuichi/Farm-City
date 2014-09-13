@@ -21,17 +21,24 @@
 </p>
 
 <p>
-    <div id="map" style='width: 800px; height: 400px;'></div>
-    <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+  <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
 </p>
 
 <p>
   <% @images.each do |image| %>
-  <%= image_tag image.picture.to_s %>
-  <%= image.name %>
+    <%= image_tag image.picture.to_s %>
+    <%= image.name %>
   <% end %>
-
 </p>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+
+<%= form_for @comment, url: place_comments_path(@place) do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit %>
+<% end %>
+
+<%= render @comments %>
