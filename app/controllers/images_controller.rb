@@ -29,7 +29,6 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        binding.pry
         format.html { redirect_to place_image_path(@image.place_id, @image.id), notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
