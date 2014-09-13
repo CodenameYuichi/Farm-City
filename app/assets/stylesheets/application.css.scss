@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  text-align: justify;
+}
+
 .navbar-nav.navbar-right:last-child {
   margin-right: 0px;
 }
@@ -29,9 +33,30 @@ img{
 
 body{
   background-color: #e6f7b0;
+
+  .left{
+    text-align: left;
+  }
+
+  .right{
+    text-align: right;
+  }
+
+  .center{
+    text-align: center;
+  }
 }
 
 blockquote{
   border-color: #999999;
 }
+
+h4{
+  margin: 0px auto 30px
+}
+
+h2{
+  text-align: center;
+}
+
 

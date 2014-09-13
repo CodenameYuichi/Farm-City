@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20140913102714) do
 
   create_table "places", force: true do |t|
     t.string   "name"
-    t.integer  "width"
-    t.integer  "height"
+    t.decimal  "width",       precision: 8, scale: 2
+    t.decimal  "height",      precision: 8, scale: 2
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
