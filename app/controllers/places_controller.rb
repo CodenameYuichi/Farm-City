@@ -5,8 +5,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    places = Place.all.map { |place| place if place.near?(current_user) }
-    @places = places.compact.flatten
+    @places = Place.all
   end
 
   # GET /places/1
