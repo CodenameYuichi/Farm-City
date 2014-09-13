@@ -5,6 +5,7 @@ $(function() {
       var markers = handler.addMarkers(nodes);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      handler.getMap().setZoom(12);
       }
     );
   }
