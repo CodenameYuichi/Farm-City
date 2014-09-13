@@ -1,34 +1,24 @@
 <div class='container'>
-  <div class='row'>
-    <div class='col-xs-3'>
-      <strong>Name:</strong>
-      <%= @place.name %>
-    </div>
-    <div class='col-xs-3'>
-      <strong>Width:</strong>
-      <%= @place.width %>
-    </div>
-    <div class='col-xs-3'>
-      <strong>Height:</strong>
-      <%= @place.height %>
-    </div>
-    <div class='col-xs-3'>
-      <strong>Description:</strong>
-      <%= @place.description %>
-    </div>
+  <h1><%= @place.name %></h1>
+  <div>
+    GPS: <%= @place.width %>, <%= @place.height %>
   </div>
   <div class='row'>
     <%= link_to 'Edit', edit_place_path(@place) %> |
     <%= link_to 'Back', places_path %>
   </div>
-
+  <div>
+  <h2>Opis</h2>
+  <p><%= @place.description %></p>
+  </div>
   <div class='row'>
+    <h2>Mapa</h2>
     <div id="map"></div>
       <script> nodes = [{ lat: <%= @place.height %>, lng: <%= @place.width %> }] </script>
   </div>
-
-
   <div class='row'>
+    <h2>Galeria</h2>
+    <%= link_to 'Galeria', place_images_path(@place.id) %>
     <% @images.each do |image| %>
       <div class='col-md-3 col-sm-4 col-xs-6'>
         <div class='image'><%= image_tag image.picture.to_s %></div>
@@ -39,9 +29,11 @@
   <div class='row'>
     <%= link_to 'Add image', new_place_image_path(@place.id) %>
   </div>
-
-  <div id='comments' class='row'>
-    <%= render @comments %>
+  <div class='row'>
+    <h2>Komentarze</h2>
+    <div id='comments'>
+      <%= render @comments %>
+    </div>
   </div>
 
   <%= form_for @comment, url: place_comments_path(@place), remote: true do |f| %>

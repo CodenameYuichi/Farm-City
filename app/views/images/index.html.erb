@@ -22,6 +22,9 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Image', new_place_image_path %>
+<div>
+  <%= link_to 'New Image', new_place_image_path %>
+</div>
+<div>
+  <%= link_to 'Back to Place', place_path(@images.first.place) %>
+</div>

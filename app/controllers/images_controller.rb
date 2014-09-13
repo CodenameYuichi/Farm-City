@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.where(place_id: params[:place_id])
   end
 
   # GET /images/1
