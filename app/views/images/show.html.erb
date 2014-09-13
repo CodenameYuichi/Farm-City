@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('.picture')%></strong>
+  <%= image_tag @image.picture_url.to_s %>
+</p>
+
+<p>
+  <strong><%= t('.place') %></strong>
+  <%= @image.place.name %>
+</p>
+
+<p>
+  <strong><%= t('.name') %></strong>
+  <%= @image.name %>
+</p>
+
+<%= link_to t(:edit), edit_place_image_path(@image.place.id, @image.id) %> |
+<%= link_to t(:back), place_images_path %>

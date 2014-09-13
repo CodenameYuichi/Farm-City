@@ -1,0 +1,6 @@
+<h1>Editing image</h1>
+
+<%= render 'form' %>
+
+<%= link_to t(:show), place_image_path(@image.place.id, @image.id) %> |
+<%= link_to t(:back), place_images_path %>
