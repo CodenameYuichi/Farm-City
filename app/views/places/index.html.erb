@@ -6,7 +6,6 @@
         <div class='col-xs-2 col-md-2'><strong>Width</strong></div>
         <div class='col-xs-2 col-md-2'><strong>Height</strong></div>
         <div class='col-xs-2 col-md-2'><strong>Description</strong></div>
-        <div class='col-xs-2 col-xs-offset-1 col-md-2'><strong>User</strong></div>
   </div>
   <% @places.each do |place| %>
     <div class='row'>
@@ -14,7 +13,6 @@
       <div class='col-xs-2 col-md-2'><%= place.width %></div>
       <div class='col-xs-2 col-md-2'><%= place.height %></div>
       <div class='col-xs-2 col-md-2'><%= place.description %></div>
-      <div class='col-xs-2 col-xs-offset-1 col-md-2'><%= place.user %></div>
     </div>
     <div class='row'>
       <div class='col-xs-2'><%= link_to 'Show', place %></div>
