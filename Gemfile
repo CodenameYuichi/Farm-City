@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 gem 'rails', '4.1.6'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
@@ -14,10 +16,13 @@ gem 'devise'
 gem 'gmaps4rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'rails-i18n'
 
 group :development do
   gem 'spring'
   gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
