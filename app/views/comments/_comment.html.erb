@@ -1,4 +1,5 @@
 <blockquote>
   <p><%= comment.text %></p>
-  <footer><%= comment.user.email %></footer>
+  <footer><%= comment.user.signature %></footer>
+  <div class='text-right'><%= link_to 'usuń komentarz', place_comment_path(comment.place, comment), method: :delete %></div>
 </blockquote>
