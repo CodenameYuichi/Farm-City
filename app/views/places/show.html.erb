@@ -21,8 +21,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @place.user %>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+    <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
 </p>
 
 <p>
