@@ -40,6 +40,9 @@
     <%= link_to 'Add image', new_place_image_path(@place.id) %>
   </div>
 
+  <div class='row'>
+    <%= render @comments %>
+  </div>
 
   <div class='form group'>
     <%= form_for @comment, url: place_comments_path(@place) do |f| %>
@@ -48,7 +51,4 @@
     <%= f.submit%>
   <% end %>
 
-  <div class='row'>
-    <%= render @comments %>
-  </div>
 </div>
