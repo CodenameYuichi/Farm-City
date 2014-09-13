@@ -1,7 +1,7 @@
-<%= form_for(@image) do |f| %>
+<%= form_for @image, url: place_images_path, html: { multipart: true } do |f| %>
   <% if @image.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+      <h2><%= pluralize(@image.errors.count, 'error') %> prohibited this image from being saved:</h2>
 
       <ul>
       <% @image.errors.full_messages.each do |message| %>
@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <%= f.hidden_field :place_id, value: @place %>
+  <div class='field'>
     <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%= f.file_field :picture %>
   </div>
-  <div class="field">
-    <%= f.label :place_id %><br>
-    <%= f.text_field :place_id %>
-  </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="actions">
+  <% binding.pry %>
+  <div class='actions'>
     <%= f.submit %>
   </div>
 <% end %>

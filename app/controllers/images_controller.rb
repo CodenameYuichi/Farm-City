@@ -15,6 +15,7 @@ class ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
+    @place = params[:place_id]
   end
 
   # GET /images/1/edit
@@ -28,7 +29,8 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        binding.pry
+        format.html { redirect_to place_image_path(@image.place_id, @image.id), notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
