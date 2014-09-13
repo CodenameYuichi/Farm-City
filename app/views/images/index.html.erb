@@ -1,30 +1,22 @@
-<h1>Listing images</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= image_tag image.picture %></td>
-        <td><%= image.name %></td>
-        <td><%= link_to 'Show', place_image_path(image.place.id, image.id) %></td>
-        <td><%= link_to 'Edit', edit_place_image_path(image.place.id, image.id) %></td>
-        <td><%= link_to 'Destroy', place_image_path(image.place.id, image.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div>
-  <%= link_to 'New Image', new_place_image_path %>
+<div class="text-center">
+  <h1>Listing images</h1>
 </div>
-<div>
-  <%= link_to 'Back to Place', place_path(@images.first.place) %>
-</div>
+<% @images.each_slice(3) do |slice| %>
+  <div class="row">
+  <% slice.each do |image| %>
+    <div class="col-md-4">
+      <div class="well">
+        <%= link_to place_image_path(image.place.id, image.id) do %>
+          <%= image_tag image.picture.large.to_s, class: 'gallery' %>
+        <% end %>
+        <div class='text-center'><%= image.name %></div>
+        <div class='text-right'>
+          <%= link_to 'Show', place_image_path(image.place.id, image.id) %>
+          <%= link_to 'Edit', edit_place_image_path(image.place.id, image.id) %>
+          <%= link_to 'Destroy', place_image_path(image.place.id, image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+<% end %>

@@ -17,6 +17,7 @@ gem 'gmaps4rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rails-i18n'
+gem 'rmagick'
 
 group :development do
   gem 'spring'

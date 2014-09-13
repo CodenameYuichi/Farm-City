@@ -18,10 +18,12 @@
   </div>
   <div class='row'>
     <h2>Galeria</h2>
-    <%= link_to 'Galeria', place_images_path(@place.id) %>
+    <div>
+      <%= link_to 'Pełna galeria', place_images_path(@place.id) %>
+    </div>
     <% @images.each do |image| %>
       <div class='col-md-3 col-sm-4 col-xs-6'>
-        <div class='image'><%= image_tag image.picture.to_s %></div>
+        <div class='image'><%= image_tag image.picture.medium.to_s %></div>
         <em><%= image.name %></em>
       </div>
     <% end %>

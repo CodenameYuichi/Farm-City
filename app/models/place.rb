@@ -5,7 +5,6 @@ class Place < ActiveRecord::Base
 
   validates :name, :width, :height, presence: true
 
-
   def near?(user)
     radius = (user.radius || 0)*0.009
     include_width?(user.width,radius) && include_height?(user.height,radius)
@@ -20,5 +19,9 @@ class Place < ActiveRecord::Base
 
   def include_height?(user_height, range)
     ((user_height-range)..(user_height+range)).include?(height)
+
+  def newest_picture
+    images.first ? images.first.picture.thumb.to_s : "http://placehold.it/180x120&size=1000&text=#{name.gsub(' ','+')}"
+
   end
 end
