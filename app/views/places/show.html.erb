@@ -24,7 +24,7 @@
 
   <div class='row'>
     <div id="map"></div>
-      <script> nodes = [{ lat: <%= @place.width %>, lng: <%= @place.height %> }] </script>
+      <script> nodes = [{ lat: <%= @place.height %>, lng: <%= @place.width %> }] </script>
   </div>
 
   <div class='row'>
@@ -39,15 +39,17 @@
     <%= link_to t('.add_image'), new_place_image_path(@place.id) %>
   </div>
 
-  <div class='row'>
+  <div id='comments' class='row'>
     <%= render @comments %>
   </div>
 
-  <div class='form group'>
-    <%= form_for @comment, url: place_comments_path(@place) do |f| %>
-        <%= f.text_area :text %>
-  </div>
-    <%= f.submit%>
+  <%= form_for @comment, url: place_comments_path(@place), remote: true do |f| %>
+    <div class='form group'>
+      <%= f.text_area :text, class: 'form-control' %>
+    </div>
+    <div class='form group'>
+      <%= f.submit%>
+    </div>
   <% end %>
 
 </div>
