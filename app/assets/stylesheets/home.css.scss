@@ -1,1 +1,27 @@
+#home{
+  background: url('background.JPG') no-repeat center center fixed;
+  width: 100%;
+  height: 100%;
 
+  .white{
+    color: white;
+  }
+
+  .well, .jumbotron{
+    background-color: rgba(45, 50, 45, 0.8);
+    border-width: 0;
+  }
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+  }
+
+  .navbar-inverse .navbar-brand {
+    color: #fff;
+  }
+
+  .navbar-inverse {
+    background-color: rgba(45, 50, 45, 0.8);
+    border-width: 0;
+  }
+}

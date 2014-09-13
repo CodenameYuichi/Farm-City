@@ -42,8 +42,6 @@ class PlacesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /places/1
-  # PATCH/PUT /places/1.json
   def update
     respond_to do |format|
       if @place.update(place_params)
@@ -56,8 +54,6 @@ class PlacesController < ApplicationController
     end
   end
 
-  # DELETE /places/1
-  # DELETE /places/1.json
   def destroy
     @place.destroy
     respond_to do |format|
@@ -67,12 +63,10 @@ class PlacesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
       params.require(:place).permit(:name, :width, :height, :description).merge(user: current_user)
     end
