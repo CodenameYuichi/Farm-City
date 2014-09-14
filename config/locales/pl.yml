@@ -1,18 +1,49 @@
 en:
-  hello: "Hello world"
+  name: Nazwa
+  picture: Zdjęcie
+  password: Hasło
+  password_confirmation: Potwierdź hasło
+  remember_me: Pamiętaj mnie
+  current_password: Obecne hasło
+  hello: Hello world
   back: Wróć
   show: Pokaż
   edit: Edytuj
+  update: Wprowadź zmiany
   delete: Usuń
   hello: "Hello world"
+  sure: Na pewno chcesz usunąć?
+  width: Szerokość
+  height: Wysokość
+  radius: Odelgłość
+  description: Opis
+  sign_up: Zarejestruj się
+  devise:
+    sessions:
+      new:
+        log_in: Zaloguj
+    passwords:
+      new_password: Nowe hasło
+      confirm_new_password: Powtórz hasło
+    shared:
+      links:
+        forgot_password: Zapomniałeś hasła?
+  dashbords:
+    zero_state_favourites:
+      look_for_places: Obejrzyj miejsca z aplikacji
+    zero_state_nearest:
+      edit_user: edytuj swoje dane
+      new_place: dodaj nowe miejsce
+  home:
+    index:
+      join_us: Dołącz do nas!
+  images:
+    index:
+      back_to: Powrót do miejsca
   places:
     index:
       new_place: Dodaj miejsce
     show:
-      name: Nazwa
-      width: Szerokość
-      height: Dlugość
-      description: Opis
       add_image: Dodaj obrazek
   layouts:
     home:
@@ -24,3 +55,8 @@ en:
       edit_profile: Edytuj profil
       edit_data: Edytuj dane
       logout: Wyloguj
+  users:
+    shared:
+      index:
+        new_user: Nowy użytkownik
+
