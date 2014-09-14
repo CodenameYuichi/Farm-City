@@ -1,12 +1,14 @@
-<div class='text-center'>
-  <h1>Galeria <%= @place.name %></h1>
+<% content_for :body_class, 'images' %>
+
+<h1>Galeria <%= @place.name %></h1>
+<div class='pull-right'>
+  <%= link_to 'Dodaj obrazek', new_place_image_path(@place.id), class: 'btn btn-success' %>
+  <%= link_to t('.back_to'), place_path(@place), class: 'btn btn-default' %>
 </div>
-<div>
-  <%= link_to t('.back_to'), place_path(@place) %>
-</div>
+<div class='clearfix'></div>
 
 <% @place.images.each_slice(3) do |images| %>
   <div class='row'>
-  <%= render images %>
+    <%= render images %>
   </div>
 <% end %>
