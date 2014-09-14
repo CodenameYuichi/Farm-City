@@ -1,11 +1,11 @@
-<div class="text-center">
-  <h1>Galeria <%= @images.first.place.name %></h1>
+<div class='text-center'>
+  <h1>Galeria <%= @place.name %></h1>
 </div>
 <div>
-  <%= link_to 'Powrót do miejsca', place_path(@images.first.place) %>
+  <%= link_to 'Powrót do miejsca', place_path(@place) %>
 </div>
 
-<% @images.each_slice(3) do |images| %>
+<% @place.images.each_slice(3) do |images| %>
   <div class='row'>
   <%= render images %>
   </div>
