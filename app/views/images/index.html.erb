@@ -7,10 +7,10 @@
 <% @images.each_slice(3) do |slice| %>
   <div class="row">
   <% slice.each do |image| %>
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <div class="well">
         <%= link_to place_image_path(image.place.id, image.id) do %>
-          <%= image_tag image.picture.large.to_s, class: 'gallery' %>
+          <%= image_tag image.picture.large.to_s, class: 'gallery img-responsive' %>
         <% end %>
         <div class='text-center'><%= image.name %></div>
         <div class='text-right'>

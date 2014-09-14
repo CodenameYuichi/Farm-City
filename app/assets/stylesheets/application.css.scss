@@ -1,15 +1,17 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'home';
-@import 'places';
-@import 'images';
 
-#map{
+#map {
   width: 100%;
   height: 400px;
 }
 
-body{
+body {
   text-align: justify;
 }
 
@@ -17,57 +19,67 @@ body{
   margin-right: 0px;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-  color: #b5e617;
-}
-
-.navbar-inverse .navbar-brand {
-  color: #b5e617;
-}
-
-.row{
+.row {
   margin: 10px 0px
 }
 
-body{
-  background-color: #e6f7b0;
-
-  .left{
-    text-align: left;
-  }
-
-  .right{
-    text-align: right;
-  }
-
-  .center{
-    text-align: center;
-  }
-}
-
-body{
-  .left{
-    text-align: left;
-  }
-
-  .right{
-    text-align: right;
-  }
-
-  .center{
-    text-align: center;
-  }
-}
-
-blockquote{
+blockquote {
   border-color: #999999;
 }
 
-h4{
-  margin: 0px auto 30px
+h4 {
+  margin: 0px auto 30px;
 }
 
-h2{
-  text-align: center;
+.with-background {
+  li:nth-child(even) { background: #eee };
 }
 
+.vertical-middle {
+  height: 100%;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.gallery{
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    margin-bottom: 20px;
+}
+.gallery:hover{
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+#home{
+  background: url('background.JPG') no-repeat center center fixed;
+  width: 100%;
+  height: 100%;
+
+  .white{
+    color: white;
+  }
+
+  .well, .jumbotron{
+    background-color: rgba(45, 50, 45, 0.8);
+    border-width: 0;
+  }
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+  }
+
+  .navbar-inverse .navbar-brand {
+    color: #fff;
+  }
+
+  .navbar-inverse {
+    background-color: rgba(45, 50, 45, 0.8);
+    border-width: 0;
+  }
+}

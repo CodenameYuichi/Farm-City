@@ -1,6 +1,6 @@
 <div class='container'>
   <h1>Listing places</h1>
-  <ul class='list-unstyled'>
+  <ul class='list-unstyled with-background'>
     <% @places.each do |place| %>
       <li>
         <div class='row'>
@@ -11,9 +11,11 @@
             <p><%= place.description %></p>
           </div>
           <div class='col-md-2'>
-            <%= link_to t(:show), place %>
-            <%= link_to t(:edit), edit_place_path(place) %>
-            <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div>
+              <%= link_to t(:show), place %>
+              <%= link_to t(:edit), edit_place_path(place) %>
+              <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
           </div>
         </div>
       </li>
@@ -24,6 +26,5 @@
     <div class='col-md-12'>
     <%= link_to t('.new_place'), new_place_path %>
     </div>
-
   </div>
 </div>
