@@ -1,33 +1,46 @@
-<%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+<div class='row'>
+  <div class='col-xs-6 col-xs-offset-3'>
+    <h1><%= @place.new_record? ? 'New place' : 'Editing place' %></h1>
+    <%= form_for(@place) do |f| %>
+      <% if @place.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
 
-      <ul>
-      <% @place.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @place.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :width %><br>
+        <%= f.number_field :width, step: :any, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :height %><br>
+        <%= f.number_field :height, step: :any, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= f.submit class: 'btn btn-success btn-lg pull-right' %>
+      </div>
+    <% end %>
+    <% if @place.new_record? %>
+      <%= link_to t(:back), places_path %>
+    <% else %>
+      <%= link_to 'Show', @place %> |
+      <%= link_to 'Back', places_path %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :width %><br>
-    <%= f.number_field :width, step: :any %>
-  </div>
-  <div class="field">
-    <%= f.label :height %><br>
-    <%= f.number_field :height, step: :any %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+
+

@@ -1,39 +1,33 @@
-  <div class='jumbotron'>
-    <div class='container white'>
-      <h1>Farm City!</h1>
-      <p>
-        <strong>Farm City</strong> to społeczność osób ceniących zdrowie i chcących w świadomy sposób kształtować swoje otoczenie. Uprawa warzyw i owoców w warunkach miejskich jest możliwa! Nie&nbsp;potrzeba wcale wielkich przestrzeni, wystarczy pomysł!
-      </p>
-      <%= link_to 'Dołącz do nas!',new_user_registration_path, class: 'btn btn-success btn-lg white' %>
-    </div>
+<div class='jumbotron'>
+  <div class='container'>
+    <h1>Farm City</h1>
+    <p>
+      Społeczność osób ceniących <strong>zdrowie</strong> i chcących w świadomy sposób kształtować swoje otoczenie. <strong>Uprawa warzyw i owoców w warunkach miejskich</strong> jest możliwa! Nie&nbsp;potrzeba wcale wielkich przestrzeni, wystarczy pomysł!
+    </p>
+    <%= link_to 'Dołącz do nas!',new_user_registration_path, class: 'btn btn-success btn-lg pull-right' %>
   </div>
+</div>
 
-  <div class='background fixed-background'>
-  </div>
-
-<div class='container'>
-  <div class='row well white' id='#about'>
-    <div class='col-md-4'>
+  <div class='row well' id='#about'>
+    <div class='col-md-4 text-center'>
       <h2>Zostań miejskim ogrodnikiem!</h2>
       <p>
         Fragment skweru przed Twoim blokiem, balkon, parapet okienny, a może nawet przestrzeń na dachu mogą stać się wymarzonym miejscem na ogród warzywny.
       </p>
     </div>
-    <div class='col-md-4'>
-      <p class='text-center'>Marzy Ci się własna farma w mieście?</p>
-      <%= image_tag image_url('farmer_pictogram.png') %>
-      <p class='text-center'>Znajdź swój kawałek zieleni!</p>
+    <div class='col-md-4 thumbnail'>
+      <%= image_tag image_url('pictogram/farmer.png') %>
     </div>
-    <div class='col-md-4'>
+    <div class='col-md-4 text-center'>
       <h2>Udostępnij przestrzeń!</h2>
-      <p>W miastach istnieją tereny, na których można założyć i uprawiać ogród: miejskie, spółdzielcze, prywatne. Istnieją także ludzie, którzy chcą takie ogrody prowadzić..</p>
-      <p><strong>Zaproponuj miejsce gdzie można taki ogród założyć! </strong>.</p>
+      <p>W miastach istnieją tereny, na których można założyć i uprawiać ogród: miejskie, spółdzielcze, prywatne. Istnieją także ludzie, którzy chcą takie ogrody prowadzić.</p>
+      <p><strong>Zaproponuj miejsce gdzie można taki ogród założyć!</strong></p>
     </div>
   </div>
-  <div class='row well white' id='#about'>
-    <div class='col-md-4'>
-      <%= image_tag image_url('joy_pictogram.png') %>
-      <p class='text-center'>Połącz siły z <strong>innymi</strong> użytkownikami</p>
+
+  <div class='row well' id='#about'>
+    <div class='col-md-4 thumbnail'>
+      <%= image_tag image_url('pictogram/joy.png') %>
     </div>
     <div class='col-md-4'>
       <h2>Zobacz korzyści</h2>
@@ -41,26 +35,27 @@
         <li>Więcej terenów zielonych w Twoim otoczeniu</li>
         <li>Pozytywny wpływ na stan środowiska</li>
         <li>Kontakt z naturą połączony z aktywnym wypoczynkiem</li>
-        <li>przełamywanie monotonnej szarości industrialnego krajobrazu</li>
+        <li>Przełamywanie monotonnej szarości industrialnego krajobrazu</li>
         <li>Zmniejszenie kosztów produkcji, transportu i dystrybucji żywności</li>
+        <li>Tworzenie z innymi czegoś dobrego</li>
+        <li>Dzielenie się doświadczeniem</li>
       </ul>
     </div>
-    <div class='col-md-4'>
-      <%= image_tag image_url('teacher_pictogram.png') %>
-      <p class='text-center'>Podziel się <strong>doświadczeniem!</strong></p>
+    <div class='col-md-4 thumbnail'>
+      <%= image_tag image_url('pictogram/teacher.png') %>
     </div>
   </div>
 
-  <div class='row well white text-center'>
+  <div class='row well text-center'>
     <h2>Jak zacząć?</h2>
     <ul class="list-unstyled">
       <li>znajdź miejsce i ludzi chętnych do współpracy</li>
       <li>zainwestuj w podstawowy sprzęt ogrodniczy</li>
       <li>zdecydujcie o rodzaju uprawy…</li>
     </ul>
-    <h3>...i DZIAŁAJCIE!</h3>
+    <strong>...i DZIAŁAJCIE!</strong>
   </div>
-</div>
+<!-- </div> -->
 
 
 <!-- O nas
