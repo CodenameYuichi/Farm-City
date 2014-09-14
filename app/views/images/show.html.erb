@@ -1,17 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p id='notice'><%= notice %></p>
 
-<p>
-  <%= image_tag @image.picture_url.to_s, class: 'img-responsive' %>
-</p>
+<div class='row'>
+<%= render @image %>
+</div>
 
-<p>
-  <strong><%= t('.place') %></strong>
-  <%= @image.place.name %>
-</p>
-
-<p>
-  <strong><%= t('.name') %></strong>
-  <%= @image.name %>
-</p>
-
-<%= link_to t(:back), place_images_path %>
+<%= link_to t(:back), place_images_path, class: 'btn btn-success' %>
