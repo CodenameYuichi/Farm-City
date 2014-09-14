@@ -15,19 +15,19 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :name %><br>
+        <%= f.label t(:name) %><br>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :width %><br>
+        <%= f.label t(:width) %><br>
         <%= f.number_field :width, step: :any, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :height %><br>
+        <%= f.label t(:height) %><br>
         <%= f.number_field :height, step: :any, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :description %><br>
+        <%= f.label t(:description) %><br>
         <%= f.text_area :description, class: 'form-control' %>
       </div>
       <div class="actions">
@@ -37,10 +37,8 @@
     <% if @place.new_record? %>
       <%= link_to t(:back), places_path %>
     <% else %>
-      <%= link_to 'Show', @place %> |
-      <%= link_to 'Back', places_path %>
+      <%= link_to t(:show), @place %> |
+      <%= link_to t(:back), places_path %>
     <% end %>
   </div>
 </div>
-
-

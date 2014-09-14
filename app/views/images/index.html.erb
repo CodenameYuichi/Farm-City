@@ -2,7 +2,7 @@
   <h1>Galeria <%= @place.name %></h1>
 </div>
 <div>
-  <%= link_to 'Powrót do miejsca', place_path(@place) %>
+  <%= link_to t('.back_to'), place_path(@place) %>
 </div>
 
 <% @place.images.each_slice(3) do |images| %>
