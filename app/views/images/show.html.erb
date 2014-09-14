@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t('.picture')%></strong>
-  <%= image_tag @image.picture_url.to_s %>
+  <%= image_tag @image.picture_url.to_s, class: 'img-responsive' %>
 </p>
 
 <p>
@@ -15,5 +14,4 @@
   <%= @image.name %>
 </p>
 
-<%= link_to t(:edit), edit_place_image_path(@image.place.id, @image.id) %> |
 <%= link_to t(:back), place_images_path %>
