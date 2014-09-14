@@ -1,20 +1,22 @@
+<% content_for :body_class, 'places' %>
+
 <div class='container'>
   <h1>Listing places</h1>
-  <ul class='list-unstyled with-background'>
+  <ul class='list-unstyled'>
     <% @places.each do |place| %>
       <li>
         <div class='row'>
           <div class='col-md-2'><%= image_tag place.newest_picture %></div>
-          <div class='col-md-8'>
+          <div class='col-md-6'>
             <h3 class='inline-block'><%= place.name %></h3>
-            gps: <%= place.width %>, <%= place.height %>
+            <strong>GPS:</strong> <%= place.width %>, <%= place.height %>
             <p><%= place.description %></p>
           </div>
-          <div class='col-md-2'>
+          <div class='col-md-4'>
             <div>
-              <%= link_to t(:show), place %>
-              <%= link_to t(:edit), edit_place_path(place) %>
-              <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to t(:show), place, class: 'btn btn-default' %>
+              <%= link_to t(:edit), edit_place_path(place), class: 'btn btn-edit' %>
+              <%= link_to t(:delete), place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             </div>
           </div>
         </div>
@@ -24,7 +26,7 @@
 
   <div class='row'>
     <div class='col-md-12'>
-    <%= link_to t('.new_place'), new_place_path %>
+    <%= link_to t('.new_place'), new_place_path, class: 'pull-right btn btn-success' %>
     </div>
   </div>
 </div>

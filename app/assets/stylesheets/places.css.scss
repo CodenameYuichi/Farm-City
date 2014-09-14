@@ -1,0 +1,29 @@
+body.places {
+  h1 {
+    color: darken(#b7db01, 15%);
+    font-weight: 700;
+  }
+
+  #map {
+    width: 100%;
+    height: 400px;
+  }
+
+  .comment-list {
+    margin-top: 50px;
+  }
+
+  .main {
+    margin-bottom: 50px;
+  }
+
+  .gallery img {
+    margin-top: 10px;
+  }
+
+  .list-unstyled {
+    li {
+      margin-bottom: 20px;
+    }
+  }
+}

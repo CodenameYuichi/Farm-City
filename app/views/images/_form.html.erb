@@ -1,26 +1,35 @@
-<%= form_for @image, url: place_images_path, html: { multipart: true } do |f| %>
-  <% if @image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@image.errors.count, 'error') %> prohibited this image from being saved:</h2>
+<div class='container row'>
+  <div class='col-xs-6 col-xs-offset-3'>
+    <h2><%= @image.new_record? ? 'Nowy obrazek' : 'Edytuj obrazek' %></h2>
+    <%= form_for @image, url: place_images_path, html: { multipart: true } do |f| %>
+      <% if @image.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@image.errors.count, 'error') %> prohibited this image from being saved:</h2>
 
-      <ul>
-      <% @image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @image.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <%= f.hidden_field :place_id, value: @place %>
-  <div class='field'>
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
+      <%= f.hidden_field :place_id, value: @place %>
+      <div class='form-group'>
+        <%= f.label t(:name) %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label t(:picture) %><br>
+        <%= f.file_field :picture %>
+      </div>
+      <%= f.submit class: 'btn btn-success btn-lg pull-right' %>
+    <% end %>
+    <% if @image.new_record? %>
+      <%= link_to t(:back), place_images_path %>
+    <% else %>
+      <%= link_to t(:show), place_image_path(@image.place, @image) %> |
+      <%= link_to t(:back), place_images_path %>
+    <% end %>
   </div>
-  <div class='field'>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class='actions'>
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
