@@ -1,0 +1,123 @@
+#menu {
+  &.navbar-inverse {
+    background-color: darken(#131703, 5%);
+    opacity: 0.7;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+  }
+
+  .navbar-brand {
+    height: 70px;
+    font-size: 20pt;
+    font-family: 'Pacifico', cursive;
+    color: #b7db01;
+  }
+
+  .container {
+    padding-top: 15px;
+  }
+
+  .nav a {
+    padding-top: 20px;
+  }
+
+  a {
+    color: #fff;
+    font-variant: small-caps;
+    font-size: 13pt;
+    &:hover {
+      color: #b7db01;
+    }
+  }
+}
+
+.btn {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-variant: small-caps;
+  border-radius: 2px;
+}
+
+.btn-success {
+  border-color: darken(#92a200, 5%);
+  background-color: #92a200;
+
+  &:hover, &:active {
+    background-color: darken(#92a200, 5%);
+  }
+}
+
+.container.row {
+  padding-bottom: 20px;
+
+  a:hover {
+    color: darken(#b7db01, 15%);
+  }
+
+  h2 {
+    color: darken(#b7db01, 15%);
+    font-weight: 700;
+  }
+
+  #error_explanation {
+    color: #ff3300;
+
+    h2 {
+      font-size: 12pt;
+      color: #ff3300;
+    }
+  }
+}
+
+body.home {
+  background: url('background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .jumbotron {
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #444;
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: darken(#b7db01, 15%);
+      line-height: 1.5;
+    }
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #444;
+
+    h2 {
+      color: darken(#b7db01, 15%);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 12pt;
+    }
+
+    .thumbnail {
+      background-color: transparent;
+      border: 0 solid #ddd;
+    }
+  }
+}
+
+.main.container, .main.container-fluid {
+  margin-top: 100px;
+}
