@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 gem 'gmaps4rails'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rails-i18n'
 gem 'rmagick'
