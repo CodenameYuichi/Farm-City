@@ -1,3 +1,5 @@
+<% content_for :body_class, 'places' %>
+
 <div class='container'>
   <h1>Listing places</h1>
   <ul class='list-unstyled with-background'>
@@ -24,7 +26,7 @@
 
   <div class='row'>
     <div class='col-md-12'>
-    <%= link_to t('.new_place'), new_place_path %>
+    <%= link_to t('.new_place'), new_place_path, class: 'pull-right btn btn-success' %>
     </div>
   </div>
 </div>

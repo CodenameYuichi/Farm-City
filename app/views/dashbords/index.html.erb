@@ -6,6 +6,9 @@
     <%= render @places %>
   <% end %>
 </ul>
+
+<hr>
+
 <h2>Twoje ulubione</h2>
 <ul class='list-unstyled'>
   <% if current_user.places.blank? %>
