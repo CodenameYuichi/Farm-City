@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913170147) do
+ActiveRecord::Schema.define(version: 20140914011709) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20140913170147) do
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id"
+
+  create_table "places_users", force: true do |t|
+    t.integer "place_id"
+    t.integer "user_id"
+  end
+
+  add_index "places_users", ["place_id"], name: "index_places_users_on_place_id"
+  add_index "places_users", ["user_id"], name: "index_places_users_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

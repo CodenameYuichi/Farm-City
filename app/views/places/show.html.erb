@@ -1,29 +1,36 @@
 <div class='container'>
-  <h1><%= @place.name %></h1>
-  <div>
-    GPS: <%= @place.width %>, <%= @place.height %>
+  <div class='well'>
+    <h1><%= @place.name %></h1>
+    <div>
+      GPS: <%= @place.width %>, <%= @place.height %>
+    </div>
+    <div class='row'>
+      <% if current_user.places.include?(@place) %>
+        <%= link_to 'Usuń ulubionych', place_favourite_path(@place, 1), method: :delete %>
+      <% else %>
+        <%= link_to 'Dodaj do ulubionych', place_favourites_path(@place), method: :post %>
+      <% end %>
+      <%= link_to t(:edit), edit_place_path(@place) %> |
+      <%= link_to t(:back), places_path %>
+    </div>
   </div>
-  <div class='row'>
-    <%= link_to t(:edit), edit_place_path(@place) %> |
-    <%= link_to t(:back), places_path %>
+  <div class='well'>
+    <h2>Opis</h2>
+    <p><%= @place.description %></p>
   </div>
-  <div>
-  <h2>Opis</h2>
-  <p><%= @place.description %></p>
-  </div>
-  <div class='row'>
+  <div class='row well'>
     <h2>Mapa</h2>
     <div id="map"></div>
       <script> nodes = [{ lat: <%= @place.height %>, lng: <%= @place.width %> }] </script>
   </div>
   <div class='row'>
     <h2>Galeria</h2>
-    <div>
+    <p>
       <%= link_to 'Pełna galeria', place_images_path(@place.id) %>
-    </div>
+    </p>
     <% @images.each do |image| %>
-      <div class='col-md-3 col-sm-4 col-xs-6'>
-        <div class='image'><%= image_tag image.picture.medium.to_s %></div>
+      <div class='col-sm-3'>
+        <%= image_tag image.picture.medium.to_s, class: 'img-responsive img-rounded' %>
         <em><%= image.name %></em>
       </div>
     <% end %>
@@ -31,7 +38,7 @@
   <div class='row'>
     <%= link_to t('.add_image'), new_place_image_path(@place.id) %>
   </div>
-  <div class='row'>
+  <div class='row well'>
     <h2>Komentarze</h2>
     <div id='comments'>
       <%= render @comments %>
