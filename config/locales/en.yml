@@ -20,4 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  back: Back
+  show: Show
+  edit: Edit
+  delete: Delete
   hello: "Hello world"
+  places:
+    index:
+      new_place: New place
+    show:
+      name: Name
+      width: Width
+      height: Height
+      description: Description
+      add_image: Add Image
+  layouts:
+    home:
+      sign_in: Sign In
+      sign_up: Sign Up
+    application:
+      dashboard: Dashboard
+      places: Places
+      edit_profile: Edit profile
+      edit_data: Edit data
+      logout: Log out

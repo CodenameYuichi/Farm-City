@@ -1,0 +1,16 @@
+<h2>Miejsca w Twojej okolicy</h2>
+<ul class='list-unstyled'>
+  <% if @places.blank? %>
+    <%= render 'zero_state_nearest' %>
+  <% else %>
+    <%= render @places %>
+  <% end %>
+</ul>
+<h2>Twoje ulubione</h2>
+<ul class='list-unstyled'>
+  <% if current_user.places.blank? %>
+    <%= render 'zero_state_favourites' %>
+  <% else %>
+    <%= render current_user.places %>
+  <% end %>
+</ul>
