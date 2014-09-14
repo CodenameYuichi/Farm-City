@@ -45,7 +45,7 @@
   border-color: darken(#92a200, 5%);
   background-color: #92a200;
 
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background-color: darken(#92a200, 5%);
   }
 }

@@ -1,68 +1,58 @@
 <% content_for :body_class, 'places' %>
 
-<div class='container'>
-  <div class='well'>
-    <h1><%= @place.name %></h1>
-    <addess>
-      <strong>GPS:</strong> <%= @place.width %>, <%= @place.height %>
-    </address>
-    <div class='pull-right'>
-      <% if current_user.places.include?(@place) %>
-        <%= link_to 'Usuń ulubionych', place_favourite_path(@place, 1), method: :delete, class: 'btn btn-danger' %>
-      <% else %>
-        <%= link_to 'Dodaj do ulubionych', place_favourites_path(@place), method: :post, class: 'btn btn-success' %>
-      <% end %>
-      <%= link_to t(:edit), edit_place_path(@place), class: 'btn btn-edit' %>
-      <%= link_to t(:back), places_path, class: 'btn btn-default' %>
-    </div>
-    <div class='clearfix'></div>
+<div class='well'>
+  <h1><%= @place.name %></h1>
+  <addess>
+    <strong>GPS:</strong> <%= @place.width %>, <%= @place.height %>
+  </address>
+  <div class='pull-right'>
+    <% if current_user.places.include?(@place) %>
+      <%= link_to 'Usuń ulubionych', place_favourite_path(@place, 1), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'Dodaj do ulubionych', place_favourites_path(@place), method: :post, class: 'btn btn-success' %>
+    <% end %>
+    <%= link_to t(:edit), edit_place_path(@place), class: 'btn btn-edit' %>
+    <%= link_to t(:back), places_path, class: 'btn btn-default' %>
   </div>
+  <div class='clearfix'></div>
+</div>
 
-  <div class='well'>
-    <h2>Opis</h2>
-    <p><%= @place.description %></p>
+<div class='well'>
+  <h2>Opis</h2>
+  <p><%= @place.description %></p>
+</div>
+
+<div class='well'>
+  <h2>Mapa</h2>
+  <div id="map"></div>
+    <script> nodes = [{ lat: <%= @place.height %>, lng: <%= @place.width %> }] </script>
+</div>
+
+<div class='gallery row'>
+  <h2>Galeria</h2>
+  <div class='pull-right'>
+    <%= link_to t('.add_image'), new_place_image_path(@place.id), class: 'btn btn-success' %>
+    <%= link_to 'Pełna galeria', place_images_path(@place.id), class: 'btn btn-edit' %>
   </div>
-
-  <div class='well'>
-    <h2>Mapa</h2>
-    <div id="map"></div>
-      <script> nodes = [{ lat: <%= @place.height %>, lng: <%= @place.width %> }] </script>
-  </div>
-
-  <!-- <div class='well'> -->
-    <div class='row'>
-      <h2>Galeria</h2>
-      <div class='action pull-right'>
-        <%= link_to t('.add_image'), new_place_image_path(@place.id), class: 'btn btn-success' %>
-        <%= link_to 'Pełna galeria', place_images_path(@place.id), class: 'btn btn-edit' %>
-      </div>
-      <div class='clearfix'></div>
-      <% @images.each do |image| %>
-        <div class='col-sm-3'>
-          <%= image_tag image.picture.medium.to_s, class: 'img-responsive img-rounded' %>
-          <em><%= image.name %></em>
-        </div>
-      <% end %>
-    </div>
-  <!-- </div> -->
-
-  <div class='row'>
-
-  </div>
-
-  <div class='row well'>
-    <h2>Komentarze</h2>
-    <div id='comments'>
-      <%= render @comments %>
-    </div>
-  </div>
-
-  <%= form_for @comment, url: place_comments_path(@place), remote: true do |f| %>
-    <div class='form group'>
-      <%= f.text_area :text, class: 'form-control' %>
-    </div>
-    <div class='form group'>
-      <%= f.submit%>
+  <div class='clearfix'></div>
+  <% @images.each do |image| %>
+    <div class='col-sm-3'>
+      <%= image_tag image.picture.medium.to_s, class: 'img-responsive img-rounded' %>
+      <em><%= image.name %></em>
     </div>
   <% end %>
 </div>
+
+<div class='comment-list row well'>
+  <h2>Komentarze</h2>
+  <div id='comments'>
+    <%= render @comments %>
+  </div>
+</div>
+
+<%= form_for @comment, url: place_comments_path(@place), remote: true, html: { class: 'form-inline' } do |f| %>
+  <div class='form-group'>
+    <%= f.text_area :text, class: 'form-control', placeholder: 'Dodaj swój komentarz', cols: 50 %>
+  </div>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>
